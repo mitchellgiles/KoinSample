@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">KoinSample</string>
+    <string name="action_settings">Settings</string>
+    <string name="title">Title:</string>
+    <string name="title_hint">Enter Task Title Here...</string>
+    <string name="task_hint">Enter Task Details Here...</string>
+    <string name="save">Save</string>
+    <string name="details">Details:</string>
+    <string name="priority">Priority:</string>
+    <string name="priority_hint">Enter the Priority Here...</string>
+</resources>
