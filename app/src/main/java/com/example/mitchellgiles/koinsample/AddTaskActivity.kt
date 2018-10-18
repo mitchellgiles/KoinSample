@@ -9,19 +9,18 @@ import android.view.View
 import com.example.mitchellgiles.koinsample.data.Task
 
 import kotlinx.android.synthetic.main.activity_add_task.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class AddTaskActivity : AppCompatActivity() {
 
-    private lateinit var addTaskViewModel: AddTaskViewModel
+    val addTaskViewModel: AddTaskViewModel by viewModel()
     private var intentExtra: String = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_task)
-
-        this.addTaskViewModel = ViewModelProviders.of(this).get(AddTaskViewModel::class.java)
 
         this.intentExtra = intent?.getStringExtra("title") ?: ""
 

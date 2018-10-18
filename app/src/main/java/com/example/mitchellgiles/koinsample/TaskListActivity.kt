@@ -13,18 +13,17 @@ import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_task_list.*
 import android.support.v7.widget.helper.ItemTouchHelper
-
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class TaskListActivity : AppCompatActivity(), TaskAdapter.TaskAdapterOnClickHandler {
 
-    private lateinit var taskListViewModel: TaskListViewModel
+    val taskListViewModel: TaskListViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task_list)
 
-        this.taskListViewModel = ViewModelProviders.of(this).get(TaskListViewModel::class.java)
 
         fab.setOnClickListener { view ->
             val intent = Intent(this, AddTaskActivity::class.java)

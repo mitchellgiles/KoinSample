@@ -8,21 +8,9 @@ import org.koin.android.ext.android.startKoin
 
 class MainApplication : Application() {
 
-    companion object {
-        private lateinit var appDatabase: AppDatabase
-        private lateinit var repository: Repository
-
-        fun getRepository() = this.repository
-    }
-
-
     override fun onCreate() {
         super.onCreate()
-
-        appDatabase = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "Task").build()
-        repository = Repository(appDatabase.taskDao())
-
-//        startKoin(this, listOf(appModule))
+        startKoin(this, listOf(appModule))
     }
 
 
