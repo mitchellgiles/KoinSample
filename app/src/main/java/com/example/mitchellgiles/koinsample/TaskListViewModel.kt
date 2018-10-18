@@ -7,13 +7,12 @@ import com.example.mitchellgiles.koinsample.data.Task
 import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject
 
-class TaskListViewModel: ViewModel(), KoinComponent {
-    val repository: Repository by inject()
+class TaskListViewModel(val repo: Repository): ViewModel() {
 
-    fun getTask(title: String): LiveData<Task> = repository.getTask(title)
+    fun getTask(title: String): LiveData<Task> = repo.getTask(title)
 
-    fun getTasks(): LiveData<List<Task>> = repository.getTasks()
+    fun getTasks(): LiveData<List<Task>> = repo.getTasks()
 
-    fun deleteTask(task: Task) = repository.deleteTask(task)
+    fun deleteTask(task: Task) = repo.deleteTask(task)
 
 }
