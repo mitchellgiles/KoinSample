@@ -1,9 +1,7 @@
-package com.example.mitchellgiles.koinsample
+package com.example.mitchellgiles.koinsample.di
 
 import android.app.Application
-import android.arch.persistence.room.Room
-import com.example.mitchellgiles.koinsample.data.AppDatabase
-import com.example.mitchellgiles.koinsample.data.Repository
+import com.example.mitchellgiles.koinsample.di.appModule
 import org.koin.android.ext.android.startKoin
 
 class MainApplication : Application() {
