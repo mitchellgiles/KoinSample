@@ -14,6 +14,6 @@ val appModule = module {
     single { androidApplication() as MainApplication }
     single { Room.databaseBuilder(androidApplication(), AppDatabase::class.java, "Task").build() }
     single { Repository(get<AppDatabase>().taskDao())}
-    viewModel<AddTaskViewModel> { AddTaskViewModel() }
-    viewModel<TaskListViewModel> { TaskListViewModel() }
+    viewModel{ AddTaskViewModel() }
+    viewModel{ TaskListViewModel(get()) }
 }
