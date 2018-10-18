@@ -7,7 +7,7 @@ import com.example.mitchellgiles.koinsample.data.Task
 import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject
 
-class TaskListViewModel(val repo: Repository): ViewModel() {
+class TaskListViewModel(private val repo: Repository): ViewModel() {
 
     fun getTask(title: String): LiveData<Task> = repo.getTask(title)
 
