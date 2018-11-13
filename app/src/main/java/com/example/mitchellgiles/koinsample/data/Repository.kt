@@ -1,9 +1,7 @@
 package com.example.mitchellgiles.koinsample.data
 
 import android.arch.lifecycle.LiveData
-import kotlinx.coroutines.experimental.GlobalScope
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.experimental.*
 
 class Repository(val taskDao: TaskDao) {
 
@@ -11,12 +9,12 @@ class Repository(val taskDao: TaskDao) {
 
     fun getTasks(): LiveData<List<Task>> = taskDao.getTasks()
 
-    fun updateTask(title: String, detail: String, priority: String, originalTitle: String) {
-        GlobalScope.launch { taskDao.updateTask(title, detail, priority, originalTitle) }
+    suspend fun updateTask(title: String, detail: String, priority: String, originalTitle: String) {
+        withContext(Dispatchers.IO) { taskDao.updateTask(title, detail, priority, originalTitle) }
     }
 
-    fun addTask(task: Task) = GlobalScope.launch { taskDao.addTask(task)  }
+    suspend fun addTask(task: Task) = withContext(Dispatchers.IO) { taskDao.addTask(task)  }
 
-    fun deleteTask(task: Task) = GlobalScope.launch { taskDao.deleteTask(task) }
+    suspend fun deleteTask(task: Task) = withContext(Dispatchers.IO) { taskDao.deleteTask(task) }
 
 }

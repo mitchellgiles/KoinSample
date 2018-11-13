@@ -13,6 +13,7 @@ import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_task_list.*
 import android.support.v7.widget.helper.ItemTouchHelper
+import android.util.Log
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
@@ -68,4 +69,13 @@ class TaskListActivity : AppCompatActivity(), TaskAdapter.TaskAdapterOnClickHand
         startActivity(intent)
     }
 
+    override fun onResume() {
+        super.onResume()
+        Log.d("Test", "On Resume was called")
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if(hasFocus) Log.d("Test", "Focus was changed")
+    }
 }

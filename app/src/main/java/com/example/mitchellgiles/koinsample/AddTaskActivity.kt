@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.example.mitchellgiles.koinsample.data.Task
 
 import kotlinx.android.synthetic.main.activity_add_task.*
@@ -37,6 +38,7 @@ class AddTaskActivity : AppCompatActivity() {
         val task = Task(taskTitle.text.toString(), taskDetails.text.toString(), taskPriority.text.toString())
         if (intentExtra != "") addTaskViewModel.updateTask(task, intentExtra) else addTaskViewModel.addTask(task)
 
+        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show()
         Log.d("Test", "has been saved? maybe")
         this.finish()
     }
