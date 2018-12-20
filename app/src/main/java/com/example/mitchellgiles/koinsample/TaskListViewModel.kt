@@ -16,7 +16,7 @@ class TaskListViewModel(private val repo: Repository): ViewModel(), CoroutineSco
 
     private val job = Job()
     override val coroutineContext: CoroutineContext
-        get() = job + Dispatchers.Main
+        get() = job + Dispatchers.IO
 
     fun getTask(title: String): LiveData<Task> = repo.getTask(title)
 
