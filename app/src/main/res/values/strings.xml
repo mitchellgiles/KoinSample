@@ -8,4 +8,7 @@
     <string name="details">Details:</string>
     <string name="priority">Priority:</string>
     <string name="priority_hint">Enter the Priority Here...</string>
+    <string name="rxTest">Test RxJava</string>
+    <string name="coroutinesTest">Test Coroutines</string>
+    <string name="threadTest">Test Threads</string>
 </resources>

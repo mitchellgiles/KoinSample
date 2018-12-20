@@ -4,13 +4,13 @@ import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
 import com.example.mitchellgiles.koinsample.data.Repository
 import com.example.mitchellgiles.koinsample.data.Task
-import kotlinx.coroutines.experimental.CoroutineScope
-import kotlinx.coroutines.experimental.Dispatchers
-import kotlinx.coroutines.experimental.Job
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject
-import kotlin.coroutines.experimental.CoroutineContext
+import kotlin.coroutines.CoroutineContext
 
 class TaskListViewModel(private val repo: Repository): ViewModel(), CoroutineScope {
 
@@ -23,5 +23,9 @@ class TaskListViewModel(private val repo: Repository): ViewModel(), CoroutineSco
     fun getTasks(): LiveData<List<Task>> = repo.getTasks()
 
     fun deleteTask(task: Task) = launch { repo.deleteTask(task) }
+
+    override fun onCleared() {
+        job.cancel()
+    }
 
 }

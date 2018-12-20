@@ -10,6 +10,8 @@ import android.widget.Toast
 import com.example.mitchellgiles.koinsample.data.Task
 
 import kotlinx.android.synthetic.main.activity_add_task.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
@@ -31,7 +33,6 @@ class AddTaskActivity : AppCompatActivity() {
             taskPriority.setText(it?.priority)
         })
 
-
     }
 
     fun save(view: View) {
@@ -42,4 +43,5 @@ class AddTaskActivity : AppCompatActivity() {
         Log.d("Test", "has been saved? maybe")
         this.finish()
     }
+
 }

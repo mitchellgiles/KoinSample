@@ -1,7 +1,7 @@
 package com.example.mitchellgiles.koinsample.data
 
 import android.arch.lifecycle.LiveData
-import kotlinx.coroutines.experimental.*
+import kotlinx.coroutines.*
 
 class Repository(val taskDao: TaskDao) {
 
