@@ -8,8 +8,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import org.koin.standalone.KoinComponent
-import org.koin.standalone.inject
 import kotlin.coroutines.CoroutineContext
 
 class TaskListViewModel(private val repo: Repository): ViewModel(), CoroutineScope {
