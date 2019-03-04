@@ -1,16 +1,11 @@
 package com.example.mitchellgiles.koinsample
 
 import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.Menu
-import android.view.MenuItem
-
 import kotlinx.android.synthetic.main.activity_task_list.*
 import android.support.v7.widget.helper.ItemTouchHelper
 import android.util.Log
